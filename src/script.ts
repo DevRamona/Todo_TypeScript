@@ -32,6 +32,8 @@ if(list instanceof HTMLUListElement && form instanceof HTMLFormElement && input 
         const checkbox = document.createElement("input")
         checkbox.addEventListener("change", () => {
             task.completed = checkbox.checked
+            // console.log(tasks)
+        
         })
         checkbox.type = "checkbox"
         checkbox.checked = task.completed
@@ -41,7 +43,10 @@ if(list instanceof HTMLUListElement && form instanceof HTMLFormElement && input 
         
         
 
+    
     }
+    
+
 } else {
     // console.log(`Not found`)
 }
