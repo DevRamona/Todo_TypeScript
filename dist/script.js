@@ -17,6 +17,14 @@ if (list instanceof HTMLUListElement && form instanceof HTMLFormElement && input
         addListItem(newTask);
     });
     function addListItem(task) {
+        const item = document.createElement("li");
+        const label = document.createElement("label");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = task.completed;
+        label.append(checkbox, task.title);
+        item.append(label);
+        list === null || list === void 0 ? void 0 : list.append(item);
     }
 }
 else {

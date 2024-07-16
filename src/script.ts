@@ -13,7 +13,7 @@ if(list instanceof HTMLUListElement && form instanceof HTMLFormElement && input 
     form. addEventListener("submit", e => {
         e.preventDefault()
         if(input.value === "" || input.value === null) return
-        const newTask = {
+        const newTask : Task = {
             id : 1, 
             title : input.value,
             completed : false,
@@ -23,6 +23,16 @@ if(list instanceof HTMLUListElement && form instanceof HTMLFormElement && input 
 
     })
     function addListItem(task :Task) {
+        const item = document.createElement("li")
+        const label = document.createElement("label")
+        const checkbox = document.createElement("input")
+        checkbox.type = "checkbox"
+        checkbox.checked = task.completed
+        label.append(checkbox, task.title)
+        item.append(label)
+        list?.append(item)
+        
+        
 
     }
 } else {
